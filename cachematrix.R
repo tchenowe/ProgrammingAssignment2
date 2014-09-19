@@ -1,12 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
 
-## Write a short comment describing this function
-
-## Test to make sure commit and push work.
-
-mat<-matrix(c(1,0,1,2,4,0,3,5,6), nrow=3,ncol=3)
-
+# makeCacheMatrix returns an object with methods for setting and returning a matrix
+# and storing and returning the inverse of the Matrix.
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
     set <- function(y) {
@@ -21,8 +15,11 @@ makeCacheMatrix <- function(x = matrix()) {
          getInverse = getInverse)
 }
 
-
-## Write a short comment describing this function
+# A function that accepts a makeCacheMatrix object, checks to see if a matrix's 
+# inverse is cached in the object and if it is returns the inverse. If the inverse 
+# is not cached it retrieves the matrix stored in the object, computes the inverse
+# of the matrix, caches the value of the inverse in the object and then returns 
+# the inverse.
 
 cacheSolve <- function(x, ...) {
     inv <- x$getInverse()
